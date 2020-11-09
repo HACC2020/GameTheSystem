@@ -22,7 +22,7 @@ function Navbar() {
           </Link>
         </div>
         <div className="pl-8">
-          <Link href="/schedule">Login</Link>
+          <Link href="/login">Login</Link>
         </div>
       </div>
     </div>
