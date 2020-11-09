@@ -7,15 +7,8 @@ use DB;
 
 class UsersController extends Controller
 {
-    public function getAllAppointments($id, $id2){
-        $data = DB::select('EXEC ComboBox_AvailableSecurityLevels_Proc :id, :id2',
-            [
-                ':id' => $id,
-                ':id2' => $id2,
-
-            ]
-        );
-
+    public function getUserAppointments($id){
+        $data = DB::select('EXEC [dbo].[View_UserAppointments_Proc] :id', [':id' => $id]);
         return response()->json($data);
     }
 

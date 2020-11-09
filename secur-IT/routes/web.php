@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/test', [TestController::class, 'getTestInfo']);
 
 // For Users
-Route::get('user/{id}/{id2}/appointments', [UsersController::class, 'getAllAppointments']);
+Route::get('user/{id}/appointments', [UsersController::class, 'getUserAppointments']);
 Route::get('user/{id}/latest', [UsersController::class, 'getLatestAppointments']);
 
 // Appointments
