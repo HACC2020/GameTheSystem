@@ -3,7 +3,7 @@ import React from 'react';
 function CallToAction() {
   return (
     <div className="flex">
-      <div className="w-1/2">
+      <div className="grid w-1/2 place-content-center">
         <h1 className="text-3xl font-bold mb-4">
           Tired of using Google Sheets
           {' '}
