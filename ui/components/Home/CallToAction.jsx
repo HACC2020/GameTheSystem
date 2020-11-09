@@ -12,7 +12,7 @@ function CallToAction() {
           to track appointments?
         </h1>
         <p>
-          You can now automate appointment check-ins and room movements
+          You can now automate appointment check ins and room movements
           <br />
           with our QR code based system.
         </p>
