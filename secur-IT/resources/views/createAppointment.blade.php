@@ -23,23 +23,5 @@
             <input type="text" name="GuestIDs"><br>
             <input type="submit" value="Save">
         </form>
-
-        <h1>Update postUpdateCheckIn</h1>
-        <br>
-        <form action="{{ url('checkin')}}" method="POST">
-            {{ csrf_field() }}
-            <input type="text" name="AppointmentID"><br>
-            <input type="text" name="GuestIDs"><br>
-            <input type="submit" value="Save">
-        </form>      
-
-        <h1>Update postUpdateCheckOut</h1>
-        <br>
-        <form action="{{ url('checkout')}}" method="POST">
-            {{ csrf_field() }}
-            <input type="text" name="AppointmentID"><br>
-            <input type="text" name="GuestIDs"><br>
-            <input type="submit" value="Save">
-        </form>            
 </body>
 </html>
