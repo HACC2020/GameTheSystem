@@ -1,0 +1,35 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-color {
+  background-color: #373a40;
+}
+
+.body-color {
+  background-color: #eeeeee;
+}
+
+.accent-color {
+  color: #19d3da;
+}
+
+.bg-accent-color {
+  background-color: #19d3da;
+}
