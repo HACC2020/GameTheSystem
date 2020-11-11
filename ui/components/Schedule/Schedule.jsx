@@ -15,6 +15,8 @@ function Schedule() {
     status: 'success',
     message: 'Successfully scheduled an appointment!',
   });
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [purpose, setPurpose] = useState('');
   const [room, setRoom] = useState('');
@@ -29,6 +31,13 @@ function Schedule() {
 
   const submit = async () => {
     try {
+      const { data } = await axios.post('/user', {
+        data: {
+          api_key: window.localStorage.getItem('token'),
+        },
+      });
+      const json = JSON.parse(data);
+
       const info = await axios.post('/appointments/create', {
         sponsoringUserID: window.localStorage.getItem('userId'),
         startDateTime: date[0].format('YYYY-MM-DD HH:mm'),
@@ -64,6 +73,16 @@ function Schedule() {
         <div className="text-gray-600 mb-4">
           Create an appointment for someone needing to enter the building.
         </div>
+        <div className="flex justify-between">
+          <div className="pt-2 pb-1">
+            <div>First Name</div>
+            <Input onChange={(value) => setFirstName(value)} placeholder="First Name" />
+          </div>
+          <div className="pt-2 pb-1">
+            <div>Last Name</div>
+            <Input onChange={(value) => setLastName(value)} placeholder="Last Name" />
+          </div>
+        </div>
         <div className="pb-1">Email</div>
         <Input onChange={(value) => setEmail(value.target.value)} placeholder="Email" />
         <div className="pt-2 pb-1">Room Number</div>
@@ -72,6 +91,7 @@ function Schedule() {
         <TextArea onChange={(value) => setPurpose(value.target.value)} rows={4} />
         <div className="pt-2 pb-1">Purpose</div>
         <RangePicker
+          className="w-full"
           showTime={{ format: 'HH:mm' }}
           format="YYYY-MM-DD HH:mm"
           onChange={(value) => setDate(value)}
