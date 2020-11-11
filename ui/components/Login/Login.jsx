@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { message, Input } from 'antd';
-import { useRouter } from 'next/router';
 import axios from '../../api';
 
 import Button from '../Button';
 
 function Login() {
   const [email, setEmail] = useState('');
-  const router = useRouter();
 
   const check = async () => {
     try {
       await axios.post('/login', {
         email,
       });
+      message.success('Email sent!');
     } catch (error) {
       console.log(error);
       message.error('Login failed');

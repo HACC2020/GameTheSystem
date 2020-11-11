@@ -38,7 +38,7 @@ class AppointmentController extends Controller
             );
         
         $values = json_encode($values);
-        $data = DB::select('EXEC [dbo].[Create_Appointment_Proc] ?', [$values]);
+        $data = DB::select('EXEC [dbo].[Create_Appointment_Proc] :AppointmentInfo', [$values]);
         // echo $values;
         return response()->json($data);
     }    
