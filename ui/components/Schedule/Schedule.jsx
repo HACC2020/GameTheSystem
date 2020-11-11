@@ -15,6 +15,8 @@ function Schedule() {
     status: 'success',
     message: 'Successfully scheduled an appointment!',
   });
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [purpose, setPurpose] = useState('');
   const [room, setRoom] = useState('');
@@ -29,15 +31,23 @@ function Schedule() {
 
   const submit = async () => {
     try {
-      const info = await axios.post('/appointments/create', {
-        sponsoringUserID: window.localStorage.getItem('userId'),
-        startDateTime: Date(date[0]),
-        endDateTime: Date(date[1]),
-        purpose,
-        appointmentRoomNumber: room,
-        guestEmails: [email],
+      const { data } = await axios.post('/user', {
+        data: {
+          api_key: window.localStorage.getItem('token'),
+        },
       });
-      console.log('info');
+      const json = JSON.parse(data);
+
+      const info = await axios.post('/appointments/create', {
+        data: {
+          sponsoringUserID: json.id,
+          startDateTime: Date(date[0]),
+          endDateTime: Date(date[1]),
+          purpose,
+          appointmentRoomNumber: room,
+          guestEmails: [email],
+        },
+      });
       if (info.data[0].Status === '1') {
         setSuccess({
           status: 'success',
@@ -65,14 +75,25 @@ function Schedule() {
         <div className="text-gray-600 mb-4">
           Create an appointment for someone needing to enter the building.
         </div>
+        <div className="flex justify-between">
+          <div className="pt-2 pb-1">
+            <div>First Name</div>
+            <Input onChange={(value) => setFirstName(value)} placeholder="First Name" />
+          </div>
+          <div className="pt-2 pb-1">
+            <div>Last Name</div>
+            <Input onChange={(value) => setLastName(value)} placeholder="Last Name" />
+          </div>
+        </div>
         <div className="pb-1">Email</div>
         <Input onChange={(value) => setEmail(value)} placeholder="Email" />
         <div className="pt-2 pb-1">Room Number</div>
         <Input onChange={(value) => setRoom(value)} placeholder="Room #" />
         <div className="pt-2 pb-1">Purpose</div>
         <TextArea onChange={(value) => setPurpose(value)} rows={4} />
-        <div className="pt-2 pb-1">Purpose</div>
+        <div className="pt-2 pb-1">Date & Time</div>
         <RangePicker
+          className="w-full"
           showTime={{ format: 'HH:mm' }}
           format="YYYY-MM-DD HH:mm"
           onChange={(value) => setDate(value)}
