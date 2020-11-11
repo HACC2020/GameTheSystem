@@ -20,11 +20,11 @@
             }
         </style>
     </head>
-    <body class="antialiased">
+    <body class="antialiased p-5">
       <h1>GameTheSystem</h1>
 
       <p>Use the link below to sign in to your account.</p>
 
-      <a href={{ $magicLink }}>{{ $magicLink }}</a>
+      <a class="text-gray-500" href={{ $magicLink }}>{{ $magicLink }}</a>
     </body>
 </html>
