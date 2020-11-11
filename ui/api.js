@@ -1,5 +1,5 @@
 import rest from 'axios';
 
-export const axios = rest.create({
-  baseURL: `http://${process.env.API_IP}:${process.env.REST_PORT}`,
+export default rest.create({
+  baseURL: 'http://127.0.0.1:8000',
 });
