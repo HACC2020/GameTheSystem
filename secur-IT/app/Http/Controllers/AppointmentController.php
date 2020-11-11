@@ -15,9 +15,7 @@ class AppointmentController extends Controller
     public function getCheckedAppointments(){
         $data = DB::select('EXEC [dbo].[View_AppointmentsCheckedIn_Proc]');
         return response()->json($data);
-    }    
-
-    
+    }
 
     public function getUpComingAppointments(){
         $data = DB::select('EXEC [dbo].[View_AppointmentsUpcoming_Proc]');
@@ -31,12 +29,12 @@ class AppointmentController extends Controller
     public function postCreateAppointments(Request $request){
         $values = [];
         $values = array(
-                'sponsoringUserID' => $request->SponsoringUserID,
-                'startDateTime' => $request->StartDateTime,
-                'endDateTime' => $request->EndDateTime,
-                'purpose' => $request->Purpose,
-                'appointmentRoomNumber' => $request->AppointmentRoomNumber,
-                'guestIDs' => array($request->GuestIDs)
+                'sponsoringUserID' => $request->sponsoringUserID,
+                'startDateTime' => $request->startDateTime,
+                'endDateTime' => $request->endDateTime,
+                'purpose' => $request->purpose,
+                'appointmentRoomNumber' => $request->appointmentRoomNumber,
+                'guestEmails' => array($request->guestEmails)
             );
         
         $values = json_encode($values);
@@ -48,7 +46,7 @@ class AppointmentController extends Controller
     public function postUpdateCheckIn(Request $request){
 
         $data = DB::select(DB::raw('EXEC [dbo].[Update_AppointmentCheckIn_Proc] :GuestID, :AppointmentID'),[
-            ':AppointmentID' => $request->AppointmentID,
+            ':AppointmentID' => $request->appointmentID,
             ':GuestID' => $request->GuestID
         ]);
 
