@@ -1,39 +1,35 @@
-
-
 import React from 'react';
 import Link from 'next/link';
+// import { withResizeDetector } from 'react-resize-detector';
 
-import MobileBar from './MobileBar';
+// const CustomComponent = ({ width, height }) => <div>{`${width}x${height}`}</div>;
 
 class Navbar extends React.Component {
+
   constructor(props) {
-    super(props)
-    this.state = { showMenu: false };
-    // this.toggleMenu = this.toggleMenu.bind(this);
+    super(props);
   }
 
-  // BROKEN
-  // toggle(id) {
-  //   var element = document.getElementById(id);
+  resetNav() {
+    console.log(window.screen.width);
+    if (window.screen.width > "767px") {
+      element.style.display = "inline-block";
+    }
+  }
 
-  //   if (element) {
-  //     var display = element.style.display;
+  // MODIFIED
+  toggleNav() {
+    var element = document.getElementById("nav-items");
+    var display = element.style.display;
+    <ReactResizeDetector handleWidth handleHeight>
+      {({ width, height }) => <div>{`${width}x${height}`}</div>}
+    </ReactResizeDetector>;
+    if (display == "none") {
+      element.style.display = "inline-block";
+    } else {
+      element.style.display = "none";
+    }
 
-  //     if (display == "none") {
-  //       element.style.display = "block";
-  //     } else {
-  //       element.style.display = "none";
-  //     }
-  //   }
-  // }
-
-  // toggleMenu() {
-  //   this.setState({ showMenu: !this.state.showMenu });
-  // }
-
-  toggleMenu() {
-    this.state.showMenu = !this.state.showMenu //Flips true/false
-    console.log(this.state.showMenu);
   }
 
   render() {
@@ -48,7 +44,7 @@ class Navbar extends React.Component {
 
         {/* NAVBAR TOGGLER */}
         <div className="block md:hidden">
-          <button id="nav-toggler" onClick={e => this.toggleMenu()}
+          <button id="nav-toggler" onClick={e => this.toggleNav()}
             className="flex items-center px-3 py-2 border bg-white rounded text-accent-color border-accent-color hover:text-accent-color hover:teal-light">
             <svg className="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Menu</title>
@@ -70,7 +66,7 @@ class Navbar extends React.Component {
               className=" block md:inline-block mt-4 md:mt-0 text-white hover:bg-gray-600 md:hover:text-accent-color md:hover:bg-transparent rounded md:items-end mr-4 px-4 md:px-0">
               Dashboard
           </a>
-          <a href="/checkin"
+            <a href="/checkin"
               className=" block md:inline-block mt-4 md:mt-0 text-white hover:bg-gray-600 md:hover:text-accent-color md:hover:bg-transparent rounded md:items-end mr-4 px-4 md:px-0">
               Check-in
           </a>
@@ -94,10 +90,10 @@ class Navbar extends React.Component {
           </div>
         </div>
 
-        
 
-      </nav>    
-      
+
+      </nav>
+
     )
   }
 }
