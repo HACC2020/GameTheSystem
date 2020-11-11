@@ -28,7 +28,7 @@ function Schedule() {
           endDateTime: 5,
           purpose,
           appointmentRoomNumber: room,
-          guestIDs: [0],
+          guestEmails: email,
         },
       });
       setSuccess({

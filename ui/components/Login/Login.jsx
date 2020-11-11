@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { message, Input } from 'antd';
+import { useRouter } from 'next/router';
 import axios from '../../api';
 
 import Button from '../Button';
@@ -14,9 +15,10 @@ function Login() {
           email,
         },
       });
-      // Redirect
-    } catch {
-      message.warning('This is a warning message');
+      const router = useRouter();
+      if (typeof window !== 'undefined') router.push('/appointments');
+    } catch (response) {
+      message.error('Login failed');
     }
   };
 
@@ -27,10 +29,10 @@ function Login() {
         <div className="text-gray-600 mb-4">
           An email will be sent containing your login link.
         </div>
-        <Input onChange={(value) => setEmail(value)} placeholder="Email" />
+        <Input value={email || ''} onChange={(value) => setEmail(value.target.value)} placeholder="Email" />
         <br />
         <br />
-        <Button onClick={check} text="Send Magic Link" />
+        <Button clickEvent={check} text="Send Magic Link" />
       </div>
     </div>
   );
