@@ -37,7 +37,6 @@ function Schedule() {
         appointmentRoomNumber: room,
         guestEmails: [email],
       });
-      console.log('info');
       if (info.data[0].Status === '1') {
         setSuccess({
           status: 'success',
