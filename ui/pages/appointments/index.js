@@ -6,7 +6,7 @@ export default function Appointments() {
     <div className="body-color h-screen">
       <Navbar />
       <br />
-      <main className="p-5 container mx-auto">
+      <main className="p-5">
         <h1 className="text-3xl font-bold mb-4">My Appointments</h1>
         <Appointment />
       </main>
