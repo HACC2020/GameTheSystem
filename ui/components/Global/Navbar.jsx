@@ -9,19 +9,19 @@ class Navbar extends React.Component {
   }
 
   // BROKEN
-  toggle(id) {
-    var element = document.getElementById(id);
+  // toggle(id) {
+  //   var element = document.getElementById(id);
 
-    if (element) {
-      var display = element.style.display;
+  //   if (element) {
+  //     var display = element.style.display;
 
-      if (display == "none") {
-        element.style.display = "block";
-      } else {
-        element.style.display = "none";
-      }
-    }
-  }
+  //     if (display == "none") {
+  //       element.style.display = "block";
+  //     } else {
+  //       element.style.display = "none";
+  //     }
+  //   }
+  // }
 
   render() {
     return (
@@ -35,7 +35,7 @@ class Navbar extends React.Component {
 
         {/* NAVBAR TOGGLER */}
         <div className="block md:hidden">
-          <button id="nav-toggler" onClick={this.toggle("nav-items")}
+          <button id="nav-toggler"
             className="flex items-center px-3 py-2 border bg-white rounded text-accent-color border-accent-color hover:text-accent-color hover:teal-light">
             <svg className="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Menu</title>
