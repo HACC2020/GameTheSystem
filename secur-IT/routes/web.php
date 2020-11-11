@@ -22,6 +22,8 @@ Route::get('/', function () {
 Route::get('/test', [TestController::class, 'getTestInfo']);
 
 // For Users
+Route::post('user/create/staff', [UsersController::class, 'postNewStaff']);
+Route::post('user/create/guest', [UsersController::class, 'postNewGuest']);
 Route::get('user/{id}/appointments', [UsersController::class, 'getUserAppointments']);
 Route::get('user/{id}/latest', [UsersController::class, 'getLatestAppointments']);
 

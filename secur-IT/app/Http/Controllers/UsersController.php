@@ -16,4 +16,20 @@ class UsersController extends Controller
         $data = DB::select('EXEC ComboBox_AvailableSecurityLevels_Proc');
         dump($data);
     }    
+
+    public function postNewStaff(Request $request){
+        $data = DB::select(
+            'EXEC [dbo].[Create_User_Proc] :email, :firstname, :lastname, :securityLevel', 
+            [$request->email, $request->firstName, $request->lastName, 3]
+        );
+        return response()->json($data);
+    }    
+
+    public function postNewGuest(Request $request){
+        $data = DB::select(
+            'EXEC [dbo].[Create_User_Proc] :email, :firstname, :lastname, :securityLevel', 
+            [$request->email, $request->firstName, $request->lastName, 1]
+        );
+        return response()->json($data);
+    }    
 }
