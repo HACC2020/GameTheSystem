@@ -3,7 +3,6 @@
 ## BUILD WEB
 
 ### Requirements
-Cron (optional, see alternative)
 
 PHP Version >= 7.1.3
 
