@@ -1,6 +1,7 @@
 import React from 'react';
 import QrReader from 'react-qr-scanner';
 import { useRouter } from 'next/router';
+import { message } from 'antd';
 
 import axios from '../../api';
 
@@ -8,21 +9,15 @@ function Qr() {
   const router = useRouter();
   const handleScan = async (data) => {
     if (data === 'http://localhost:3000/checkin') {
-      console.log(window.localStorage.getItem('token'));
-      const { d } = await axios.post('/user', {
-        data: {
-          api_token: window.localStorage.getItem('token'),
-        },
-      });
-      const json = JSON.parse(d);
-
       axios.post('/checkin', {
-        GuestID: json.id,
+        GuestID: Number(window.localStorage.getItem('userId')),
       });
+
+      message.success('Successfully checked in!');
 
       setTimeout(() => {
         if (typeof window !== 'undefined') router.push('/appointments');
-      }, 2000);
+      }, 3000);
     }
   };
 
@@ -37,7 +32,7 @@ function Qr() {
 
   return (
     <QrReader
-      delay={100}
+      delay={3000}
       style={previewStyle}
       onError={handleError}
       onScan={handleScan}
