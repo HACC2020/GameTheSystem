@@ -3,9 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 
+import MobileBar from './MobileBar';
+
 class Navbar extends React.Component {
   constructor(props) {
     super(props)
+    this.state = { showMenu: false };
+    // this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   // BROKEN
@@ -23,6 +27,15 @@ class Navbar extends React.Component {
   //   }
   // }
 
+  // toggleMenu() {
+  //   this.setState({ showMenu: !this.state.showMenu });
+  // }
+
+  toggleMenu() {
+    this.state.showMenu = !this.state.showMenu //Flips true/false
+    console.log(this.state.showMenu);
+  }
+
   render() {
     return (
       <nav className="flex items-center justify-between flex-wrap bg-color p-6">
@@ -35,7 +48,7 @@ class Navbar extends React.Component {
 
         {/* NAVBAR TOGGLER */}
         <div className="block md:hidden">
-          <button id="nav-toggler"
+          <button id="nav-toggler" onClick={e => this.toggleMenu()}
             className="flex items-center px-3 py-2 border bg-white rounded text-accent-color border-accent-color hover:text-accent-color hover:teal-light">
             <svg className="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Menu</title>
@@ -43,6 +56,8 @@ class Navbar extends React.Component {
             </svg>
           </button>
         </div>
+
+        {/* <MobileBar showMenu={this.state.showMenu}/> */}
 
         {/* NAVBAR ITEMS */}
         <div id="nav-items" className="w-full flex-grow mt-2 md:mt-0 md:flex md:items-center md:w-auto hidden md:block">
@@ -78,7 +93,11 @@ class Navbar extends React.Component {
               className="transition duration-300 mt-4 ease-in-out bg-accent-color hover:bg-blue-700 text-white hover:text-white font-bold py-2 px-4 rounded">Login</a>
           </div>
         </div>
-      </nav>
+
+        
+
+      </nav>    
+      
     )
   }
 }
