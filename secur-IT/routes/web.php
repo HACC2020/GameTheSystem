@@ -31,6 +31,5 @@ Route::get('appointments/today', [AppointmentController::class, 'getTodayAppoint
 Route::get('appointments/upcoming', [AppointmentController::class, 'getUpComingAppointments']);
 Route::get('appointments/form/create', [AppointmentController::class, 'getFormCreateAppointments']);
 Route::post('appointments/create', [AppointmentController::class, 'postCreateAppointments']);
-
-// POST /checkin/<APPT>/<ID>: [dbo].[Update_AppointmentCheckIn_Proc] (@AppointmentID, @GuestID)
-// POST /checkout/<APPT>/<ID>: [dbo].[Update_AppointmentCheckOut_Proc] (@AppointmentID, @GuestID)
+Route::post('checkin', [AppointmentController::class, 'postUpdateCheckIn']);
+Route::post('checkout', [AppointmentController::class, 'postUpdateCheckOut']);
