@@ -9,22 +9,23 @@
 <a href="https://hecoweb.azurewebsites.net/">Website</a> | <a href="https://devpost.com/software/electric-vehicle-charging-analysis-5dv7mo">DevPost</a>
 </div>
 
-## BUILD UI
+# Building User Interface
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ### Getting Started
 
-Install the dependencies:
-
 Be sure to be on the UI folder for all this instructions:
-```
+
+```bash
 cd ui
 ```
 
-Dependencies:
+#### Requirements
 
 - [Node.js LTS](https://nodejs.org/en/)
+
+#### Install Dependences
 
 ```bash
 npm i
@@ -32,7 +33,7 @@ npm i
 yarn install
 ```
 
-Run the development server:
+#### Run Server
 
 ```bash
 npm run dev
@@ -40,35 +41,13 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-### Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-### Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-
-
-
-## BUILD WEB
+## Building the server
 
 ### Requirements
 
-PHP Version >= 7.1.3
-
-Composer
+- PHP >=7.3
+- Composer
+- [Laravel](https://laravel.com/docs/8.x)
 
 ### Install Composer and php-mbstring
 ```
@@ -81,14 +60,18 @@ Laravel Installer
 composer global require laravel/installer
 ```
 
+### Change to api directory
+```
+cd ../secur-IT
+```
 
 ### Install Dependencies
-Navigate to ./web/hecoweb to install dependencies
 ```
 composer install
 ```
 
 ### Server Setup/Environment
+
 Copy or rename the .env.example file to a file named .env
 
 Generate a key
@@ -97,6 +80,7 @@ php artisan key:generate
 ```
 
 ### START SERVER
+
 ```
 php artisan serve
 ```

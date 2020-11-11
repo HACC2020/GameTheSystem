@@ -2,8 +2,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-Install the dependencies:
-
 Dependencies:
 
 - [Node.js LTS](https://nodejs.org/en/)
