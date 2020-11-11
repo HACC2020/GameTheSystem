@@ -6,7 +6,7 @@
 </div>
 
 <div align="center">
-<a href="https://hecoweb.azurewebsites.net/">Website</a> | <a href="https://devpost.com/software/electric-vehicle-charging-analysis-5dv7mo">DevPost</a>
+<a href="https://devpost.com/software/gaming-the-system">DevPost</a>
 </div>
 
 # Building User Interface
