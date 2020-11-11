@@ -17,7 +17,8 @@ function Login() {
       });
       const router = useRouter();
       if (typeof window !== 'undefined') router.push('/appointments');
-    } catch (response) {
+    } catch (error) {
+      console.log(error);
       message.error('Login failed');
     }
   };

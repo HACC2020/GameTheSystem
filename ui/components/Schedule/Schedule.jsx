@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { DatePicker, Modal, Result, Input } from 'antd';
+import {
+  DatePicker, Modal, Result, Input,
+} from 'antd';
 
 import Button from '../Button';
 import axios from '../../api';
@@ -13,28 +15,49 @@ function Schedule() {
     status: 'success',
     message: 'Successfully scheduled an appointment!',
   });
-  const [timer, setTimer] = useState(3);
   const [email, setEmail] = useState('');
   const [purpose, setPurpose] = useState('');
   const [room, setRoom] = useState('');
   const [date, setDate] = useState(null);
 
+  const countDown = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 3000);
+  };
+
   const submit = async () => {
     try {
-      await axios.post('/appointments/create', {
+      const { data } = await axios.post('/user', {
         data: {
-          sponsoringUserID: 0,
-          startDateTime: 5,
-          endDateTime: 5,
-          purpose,
-          appointmentRoomNumber: room,
-          guestEmails: email,
+          api_key: window.localStorage.getItem('token'),
         },
       });
-      setSuccess({
-        status: 'success',
-        message: 'Successfully scheduled an appointment!',
+      const json = JSON.parse(data);
+
+      const info = await axios.post('/appointments/create', {
+        data: {
+          sponsoringUserID: json.id,
+          startDateTime: Date(date[0]),
+          endDateTime: Date(date[1]),
+          purpose,
+          appointmentRoomNumber: room,
+          guestEmails: [email],
+        },
       });
+      if (info.data[0].Status === '1') {
+        setSuccess({
+          status: 'success',
+          message: 'Successfully scheduled an appointment!',
+        });
+      } else {
+        setSuccess({
+          status: 'error',
+          message: info.data[0].ErrorMsg,
+        });
+      }
+      countDown();
     } catch {
       setSuccess({
         status: 'error',
@@ -65,7 +88,10 @@ function Schedule() {
         <br />
         <br />
         <Button clickEvent={submit} text="Schedule" />
-        <Modal>
+        <Modal
+          visible={visible}
+          footer={null}
+        >
           <Result
             status={success.status}
             title={success.message}
