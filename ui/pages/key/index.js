@@ -7,6 +7,10 @@ export default function Appointments() {
 
   useEffect(() => {
     window.localStorage.setItem('token', router.query.token);
+
+    setTimeout(() => {
+      if (typeof window !== 'undefined') router.push('/appointments');
+    }, 2000)
   }, [router]);
 
   return (
