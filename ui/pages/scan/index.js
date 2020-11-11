@@ -1,7 +1,9 @@
 import React from 'react';
 import Navbar from '../../components/Global/Navbar';
-import Qr from '../../components/Scan/QRCode';
+// import Qr from '../../components/Scan/QRCode';
 import dynamic from 'next/dynamic'
+
+const Qr = dynamic(() => import('../../components/Scan/QRCode.jsx'), { ssr: false });
 
 export default function Appointments() {
   return (

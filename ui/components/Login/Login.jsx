@@ -7,16 +7,13 @@ import Button from '../Button';
 
 function Login() {
   const [email, setEmail] = useState('');
+  const router = useRouter();
 
   const check = async () => {
     try {
       await axios.post('/login', {
-        data: {
-          email,
-        },
+        email,
       });
-      const router = useRouter();
-      if (typeof window !== 'undefined') router.push('/appointments');
     } catch (error) {
       console.log(error);
       message.error('Login failed');
