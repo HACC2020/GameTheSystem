@@ -73,6 +73,9 @@ composer install
 ### Server Setup/Environment
 
 Copy or rename the .env.example file to a file named .env
+For authentication to work with the passwordless system, input a mailtrap username and password.
+
+Scan a QR code with http://localhost:3000 to check in.
 
 Generate a key
 ```
