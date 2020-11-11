@@ -1,27 +1,36 @@
-
-
 import React from 'react';
 import Link from 'next/link';
+// import { withResizeDetector } from 'react-resize-detector';
+
+// const CustomComponent = ({ width, height }) => <div>{`${width}x${height}`}</div>;
 
 class Navbar extends React.Component {
+
   constructor(props) {
-    super(props)
+    super(props);
   }
 
-  // BROKEN
-  // toggle(id) {
-  //   var element = document.getElementById(id);
+  resetNav() {
+    console.log(window.screen.width);
+    if (window.screen.width > "767px") {
+      element.style.display = "inline-block";
+    }
+  }
 
-  //   if (element) {
-  //     var display = element.style.display;
+  // MODIFIED
+  toggleNav() {
+    var element = document.getElementById("nav-items");
+    var display = element.style.display;
+    <ReactResizeDetector handleWidth handleHeight>
+      {({ width, height }) => <div>{`${width}x${height}`}</div>}
+    </ReactResizeDetector>;
+    if (display == "none") {
+      element.style.display = "inline-block";
+    } else {
+      element.style.display = "none";
+    }
 
-  //     if (display == "none") {
-  //       element.style.display = "block";
-  //     } else {
-  //       element.style.display = "none";
-  //     }
-  //   }
-  // }
+  }
 
   render() {
     return (
@@ -35,7 +44,7 @@ class Navbar extends React.Component {
 
         {/* NAVBAR TOGGLER */}
         <div className="block md:hidden">
-          <button id="nav-toggler"
+          <button id="nav-toggler" onClick={e => this.toggleNav()}
             className="flex items-center px-3 py-2 border bg-white rounded text-accent-color border-accent-color hover:text-accent-color hover:teal-light">
             <svg className="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Menu</title>
@@ -43,6 +52,8 @@ class Navbar extends React.Component {
             </svg>
           </button>
         </div>
+
+        {/* <MobileBar showMenu={this.state.showMenu}/> */}
 
         {/* NAVBAR ITEMS */}
         <div id="nav-items" className="w-full flex-grow mt-2 md:mt-0 md:flex md:items-center md:w-auto hidden md:block">
@@ -55,7 +66,7 @@ class Navbar extends React.Component {
               className=" block md:inline-block mt-4 md:mt-0 text-white hover:bg-gray-600 md:hover:text-accent-color md:hover:bg-transparent rounded md:items-end mr-4 px-4 md:px-0">
               Dashboard
           </a>
-          <a href="/checkin"
+            <a href="/checkin"
               className=" block md:inline-block mt-4 md:mt-0 text-white hover:bg-gray-600 md:hover:text-accent-color md:hover:bg-transparent rounded md:items-end mr-4 px-4 md:px-0">
               Check-in
           </a>
@@ -78,7 +89,11 @@ class Navbar extends React.Component {
               className="transition duration-300 mt-4 ease-in-out bg-accent-color hover:bg-blue-700 text-white hover:text-white font-bold py-2 px-4 rounded">Login</a>
           </div>
         </div>
+
+
+
       </nav>
+
     )
   }
 }
