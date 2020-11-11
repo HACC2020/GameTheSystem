@@ -38,15 +38,14 @@ class AppointmentController extends Controller
             );
         
         $values = json_encode($values);
-        $data = DB::select('EXEC [dbo].[Create_Appointment_Proc] ?', [$values]);
+        $data = DB::select('EXEC [dbo].[Create_Appointment_Proc] :AppointmentInfo', [$values]);
         // echo $values;
         return response()->json($data);
     }    
     
     public function postUpdateCheckIn(Request $request){
 
-        $data = DB::select(DB::raw('EXEC [dbo].[Update_AppointmentCheckIn_Proc] :GuestID, :AppointmentID'),[
-            ':AppointmentID' => $request->appointmentID,
+        $data = DB::select(DB::raw('EXEC [dbo].[Update_AppointmentCheckIn_Proc] :GuestID'),[
             ':GuestID' => $request->GuestID
         ]);
 

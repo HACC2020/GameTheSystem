@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function CallToAction() {
   return (
-      <div className="py-12 bg-white">
+      <div className="py-12 bg-white container mx-auto">
         <div className="relative bg-white overflow-hidden">
           <div className="max-w-screen-xl mx-auto">
             <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -28,7 +28,7 @@ function CallToAction() {
                 </div>
               </div>
 
-              <main className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+              <main className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 order-2">
                 <div className="sm:text-center lg:text-left">
                   <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
                     Tired of using Google Spreadsheets?
@@ -55,7 +55,7 @@ function CallToAction() {
               </main>
             </div>
           </div>
-          <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+          <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 order-1">
             <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
                  src="https://cdnassets.hw.net/dims4/GG/f430612/2147483647/resize/850x%3E/quality/90/?url=https%3A%2F%2Fcdnassets.hw.net%2Fe0%2Fd7%2Fcf344d0d4fff98bd28c292366ade%2F166f9932-fa9d-45d9-b50c-301d1bc41029.jpg"
                  alt=""/>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Appointment() {
   return (
-    <div className="transition-shadow duration-300 ease-in-out hover:shadow bg-white shadow-lg rounded-lg border border-solid border-gray-400 p-2 overflow-x-scroll">
+    <div className="transition-shadow duration-300 ease-in-out hover:shadow bg-white shadow-lg rounded-lg border border-solid border-gray-400 p-2 overflow-x-auto">
       <table class="min-w-full divide-y divide-gray-200">
         <thead>
           <tr>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { message, Input } from 'antd';
-import { useRouter } from 'next/router';
 import axios from '../../api';
 
 import Button from '../Button';
@@ -11,12 +10,9 @@ function Login() {
   const check = async () => {
     try {
       await axios.post('/login', {
-        data: {
-          email,
-        },
+        email,
       });
-      const router = useRouter();
-      if (typeof window !== 'undefined') router.push('/appointments');
+      message.success('Email sent!');
     } catch (error) {
       console.log(error);
       message.error('Login failed');
