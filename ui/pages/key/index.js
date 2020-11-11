@@ -13,15 +13,16 @@ export default function Appointments() {
       },
     });
 
-    return JSON.parse(data);
+    const json = JSON.parse(data);
+    window.localStorage.setItem('userId', json.id);
   };
 
   useEffect(() => {
     if (router.query.token) {
       window.localStorage.setItem('token', router.query.token);
 
-      window.localStorage.setItem('userId', getUser().id);
-  
+      getUser();
+
       setTimeout(() => {
         if (typeof window !== 'undefined') router.push('/appointments');
       }, 2000);
