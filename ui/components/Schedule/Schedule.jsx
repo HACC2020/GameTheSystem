@@ -15,8 +15,8 @@ function Schedule() {
     status: 'success',
     message: 'Successfully scheduled an appointment!',
   });
-  // const [firstname, setFirstName] = useState('');
-  // const [lastname, setLastName] = useState('');
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [purpose, setPurpose] = useState('');
   const [room, setRoom] = useState('');
