@@ -2,15 +2,15 @@ import React from 'react';
 
 function Appointment() {
   return (
-    <div className="inline-block">
+      <div className="overflow-x-auto">
+    <div className="inline-block ">
       <styled jsx>
         {`
-
       `}
       </styled>
       <div className="transition-shadow duration-300 ease-in-out hover:shadow bg-white shadow-lg rounded-lg border border-solid border-gray-400 p-6">
         <div className="flex">
-          <div className="pr-10 border-solid border-r border-gray-500">
+          <div className="pr-8 border-solid border-r-2 border-blue-200 ">
             <h2 className="font-bold text-2xl accent-color">Tuesday, Oct. 13</h2>
             <div className="text-gray-600 mb-2">
               11:30 - 12:50
@@ -41,6 +41,7 @@ function Appointment() {
         </div>
       </div>
     </div>
+      </div>
   );
 }
 
