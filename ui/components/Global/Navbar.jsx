@@ -1,8 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-// import { withResizeDetector } from 'react-resize-detector';
-
-// const CustomComponent = ({ width, height }) => <div>{`${width}x${height}`}</div>;
 
 class Navbar extends React.Component {
 
@@ -21,9 +18,6 @@ class Navbar extends React.Component {
   toggleNav() {
     var element = document.getElementById("nav-items");
     var display = element.style.display;
-    <ReactResizeDetector handleWidth handleHeight>
-      {({ width, height }) => <div>{`${width}x${height}`}</div>}
-    </ReactResizeDetector>;
     if (display == "none") {
       element.style.display = "inline-block";
     } else {
