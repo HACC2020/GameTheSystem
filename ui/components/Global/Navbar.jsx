@@ -28,7 +28,7 @@ function Navbar() {
              className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-accent-color mr-4">
             Schedule
           </a>
-          <a href="#/dashboard"
+          <a href="/dashboard"
              className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-accent-color mr-4">
             Dashboard
           </a>
