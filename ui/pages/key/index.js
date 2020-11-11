@@ -1,16 +1,31 @@
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Navbar from '../../components/Global/Navbar';
-import { useRouter } from 'next/router'
+import axios from '../../api';
 
 export default function Appointments() {
   const router = useRouter();
 
-  useEffect(() => {
-    window.localStorage.setItem('token', router.query.token);
+  const getUser = async () => {
+    const { data } = await axios.post('/user', {
+      data: {
+        api_token: window.localStorage.getItem('token'),
+      },
+    });
 
-    setTimeout(() => {
-      if (typeof window !== 'undefined') router.push('/appointments');
-    }, 2000)
+    return JSON.parse(data);
+  };
+
+  useEffect(() => {
+    if (router.query.token) {
+      window.localStorage.setItem('token', router.query.token);
+
+      window.localStorage.setItem('userId', getUser().id);
+  
+      setTimeout(() => {
+        if (typeof window !== 'undefined') router.push('/appointments');
+      }, 2000);
+    }
   }, [router]);
 
   return (

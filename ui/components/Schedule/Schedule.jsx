@@ -29,23 +29,15 @@ function Schedule() {
 
   const submit = async () => {
     try {
-      const { data } = await axios.post('/user', {
-        data: {
-          api_key: window.localStorage.getItem('token'),
-        },
-      });
-      const json = JSON.parse(data);
-
       const info = await axios.post('/appointments/create', {
-        data: {
-          sponsoringUserID: json.id,
-          startDateTime: Date(date[0]),
-          endDateTime: Date(date[1]),
-          purpose,
-          appointmentRoomNumber: room,
-          guestEmails: [email],
-        },
+        sponsoringUserID: window.localStorage.getItem('userId'),
+        startDateTime: Date(date[0]),
+        endDateTime: Date(date[1]),
+        purpose,
+        appointmentRoomNumber: room,
+        guestEmails: [email],
       });
+      console.log('info');
       if (info.data[0].Status === '1') {
         setSuccess({
           status: 'success',

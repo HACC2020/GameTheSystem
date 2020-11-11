@@ -12,6 +12,7 @@ function Login() {
       await axios.post('/login', {
         email,
       });
+      message.success('Email sent!');
     } catch (error) {
       console.log(error);
       message.error('Login failed');
