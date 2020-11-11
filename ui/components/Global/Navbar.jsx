@@ -55,11 +55,21 @@ class Navbar extends React.Component {
               className=" block md:inline-block mt-4 md:mt-0 text-white hover:bg-gray-600 md:hover:text-accent-color md:hover:bg-transparent rounded md:items-end mr-4 px-4 md:px-0">
               Dashboard
           </a>
+          <a href="/checkin"
+              className=" block md:inline-block mt-4 md:mt-0 text-white hover:bg-gray-600 md:hover:text-accent-color md:hover:bg-transparent rounded md:items-end mr-4 px-4 md:px-0">
+              Check-in
+          </a>
           </div>
-          <div className="pr-4 ">
+          <div className="pr-4">
             <a href="/appointments"
               className="block md:inline-block mt-4 md:mt-0 text-white hover:bg-gray-600 md:hover:text-accent-color md:hover:bg-transparent rounded md:items-end px-4 md:px-0">
               My Appointments
+          </a>
+          </div>
+          <div className="pr-4">
+            <a href="/scan"
+              className="block md:inline-block mt-4 md:mt-0 text-white hover:bg-gray-600 md:hover:text-accent-color md:hover:bg-transparent rounded md:items-end px-4 md:px-0">
+              Scan
           </a>
           </div>
           <hr className="mt-4 md:hidden" />
