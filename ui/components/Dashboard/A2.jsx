@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Appointment() {
+function A2() {
   return (
     <div className="transition-shadow duration-300 ease-in-out hover:shadow bg-white shadow-lg rounded-lg border border-solid border-gray-400 p-2 overflow-x-auto">
       <table class="min-w-full divide-y divide-gray-200">
@@ -19,15 +19,15 @@ function Appointment() {
             {/* NAME */}
             <td class="px-4 py-3 whitespace-no-wrap">
               <div class="flex items-center">
-                <div class="flex-shrink-0 h-10 w-10">
-                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="" />
+                <div class="flex-shrink-0 h-10 w-17">
+                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" alt="" />
                 </div>
                 <div class="ml-4">
                   <div class="text-sm leading-5 font-medium text-gray-900">
-                    Ms. Kelly Kapoor
+                    Mr. Michael Scott
                   </div>
                   <div class="text-sm leading-5 text-gray-500">
-                    diwen.lin@example.com
+                    bestboss22@example.com
                   </div>
                 </div>
               </div>
@@ -35,18 +35,18 @@ function Appointment() {
 
             {/* DATE */}
             <td class="px-4 py-3 whitespace-no-wrap">
-              <div class="text-sm leading-5 text-gray-900">November 11, 2020</div>
-              <div class="text-sm leading-5 text-gray-500">5:30pm - 8:30pm</div>
+              <div class="text-sm leading-5 text-gray-900">November 15, 2020</div>
+              <div class="text-sm leading-5 text-gray-500">4:30pm - 5:30pm</div>
             </td>
 
             {/* SPONSOR */}
             <td class="px-4 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-              Ms. Susan Wong
+              Mr. Ryan Howard
             </td>
 
             {/* PURPOSE */}
             <td class="px-4 py-4 whitespace-wrap text-sm leading-5 font-medium">
-              Asking who Joe is.
+              Routine Inspection
             </td>
 
             {/* EDIT */}
@@ -60,14 +60,14 @@ function Appointment() {
             <td class="px-4 py-3 whitespace-no-wrap">
               <div class="flex items-center">
                 <div class="flex-shrink-0 h-10 w-10">
-                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="" />
+                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="" />
                 </div>
                 <div class="ml-4">
                   <div class="text-sm leading-5 font-medium text-gray-900">
-                    Mr. Brandon Wong
+                    Mr. Wilburt Chang
                   </div>
                   <div class="text-sm leading-5 text-gray-500">
-                    diwen.lin@example.com
+                    wilburt.chang@example.com
                   </div>
                 </div>
               </div>
@@ -75,18 +75,18 @@ function Appointment() {
 
             {/* DATE */}
             <td class="px-4 py-3 whitespace-no-wrap">
-              <div class="text-sm leading-5 text-gray-900">November 11, 2020</div>
-              <div class="text-sm leading-5 text-gray-500">5:30pm - 8:30pm</div>
+              <div class="text-sm leading-5 text-gray-900">November 17, 2020</div>
+              <div class="text-sm leading-5 text-gray-500">2:00pm - 3:30pm</div>
             </td>
 
             {/* SPONSOR */}
             <td class="px-4 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-              Ms. Meredith Palmer
+              Mr. Daniel Richardson
             </td>
 
             {/* PURPOSE */}
             <td class="px-4 py-4 whitespace-wrap text-sm leading-5 font-medium">
-              Asking who Joe is.
+              Job Interview
             </td>
 
             {/* EDIT */}
@@ -100,4 +100,4 @@ function Appointment() {
   );
 }
 
-export default Appointment;
+export default A2;
