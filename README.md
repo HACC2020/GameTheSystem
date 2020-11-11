@@ -3,11 +3,16 @@
 ## BUILD WEB
 
 ### Requirements
-Cron (optional, see alternative)
 
 PHP Version >= 7.1.3
 
 Composer
+
+### Install Composer and php-mbstring
+```
+sudo apt install php-mbstring
+sudo apt install composer
+```
 
 Laravel Installer
 ```
