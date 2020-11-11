@@ -45,8 +45,7 @@ class AppointmentController extends Controller
     
     public function postUpdateCheckIn(Request $request){
 
-        $data = DB::select(DB::raw('EXEC [dbo].[Update_AppointmentCheckIn_Proc] :GuestID, :AppointmentID'),[
-            ':AppointmentID' => $request->appointmentID,
+        $data = DB::select(DB::raw('EXEC [dbo].[Update_AppointmentCheckIn_Proc] :GuestID'),[
             ':GuestID' => $request->GuestID
         ]);
 
