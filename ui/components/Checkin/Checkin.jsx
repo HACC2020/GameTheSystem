@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Login() {
+function Checkin() {
   return (
     <div className="flex justify-center w-full">
       <div className="inline-block transition-shadow duration-300 ease-in-out hover:shadow bg-white shadow-lg rounded-lg border border-solid border-gray-400 p-8">
@@ -16,4 +16,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Checkin;
