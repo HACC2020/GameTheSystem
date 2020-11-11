@@ -70,6 +70,11 @@ cd ../secur-IT
 composer install
 ```
 
+Be sure to be on the secur-IT folder for all this instructions:
+```
+cd secur-IT
+```
+
 ### Server Setup/Environment
 
 Copy or rename the .env.example file to a file named .env
