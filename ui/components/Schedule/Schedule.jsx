@@ -15,8 +15,8 @@ function Schedule() {
     status: 'success',
     message: 'Successfully scheduled an appointment!',
   });
-  const [firstname, setFirstName] = useState('');
-  const [lastname, setLastName] = useState('');
+  // const [firstname, setFirstName] = useState('');
+  // const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [purpose, setPurpose] = useState('');
   const [room, setRoom] = useState('');
@@ -73,12 +73,12 @@ function Schedule() {
         <div className="text-gray-600 mb-4">
           Create an appointment for someone needing to enter the building.
         </div>
-        <div className="flex justify-between">
-          <div className="pt-2 pb-1">
+        <div className="mb-1 flex justify-between">
+          <div className="pt-2 pb-2">
             <div>First Name</div>
             <Input onChange={(value) => setFirstName(value)} placeholder="First Name" />
           </div>
-          <div className="pt-2 pb-1">
+          <div className="pt-2 pb-2">
             <div>Last Name</div>
             <Input onChange={(value) => setLastName(value)} placeholder="Last Name" />
           </div>
@@ -89,7 +89,7 @@ function Schedule() {
         <Input onChange={(value) => setRoom(value.target.value)} placeholder="Room #" />
         <div className="pt-2 pb-1">Purpose</div>
         <TextArea onChange={(value) => setPurpose(value.target.value)} rows={4} />
-        <div className="pt-2 pb-1">Purpose</div>
+        <div className="pt-2 pb-1">Date & Time</div>
         <RangePicker
           className="w-full"
           showTime={{ format: 'HH:mm' }}
