@@ -31,8 +31,8 @@ function Schedule() {
     try {
       const info = await axios.post('/appointments/create', {
         sponsoringUserID: window.localStorage.getItem('userId'),
-        startDateTime: Date(date[0]),
-        endDateTime: Date(date[1]),
+        startDateTime: date[0].format('YYYY-MM-DD HH:mm'),
+        endDateTime: date[1].format('YYYY-MM-DD HH:mm'),
         purpose,
         appointmentRoomNumber: room,
         guestEmails: [email],
@@ -66,11 +66,11 @@ function Schedule() {
           Create an appointment for someone needing to enter the building.
         </div>
         <div className="pb-1">Email</div>
-        <Input onChange={(value) => setEmail(value)} placeholder="Email" />
+        <Input onChange={(value) => setEmail(value.target.value)} placeholder="Email" />
         <div className="pt-2 pb-1">Room Number</div>
-        <Input onChange={(value) => setRoom(value)} placeholder="Room #" />
+        <Input onChange={(value) => setRoom(value.target.value)} placeholder="Room #" />
         <div className="pt-2 pb-1">Purpose</div>
-        <TextArea onChange={(value) => setPurpose(value)} rows={4} />
+        <TextArea onChange={(value) => setPurpose(value.target.value)} rows={4} />
         <div className="pt-2 pb-1">Purpose</div>
         <RangePicker
           showTime={{ format: 'HH:mm' }}
