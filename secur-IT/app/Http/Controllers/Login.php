@@ -54,6 +54,7 @@ class Login extends Controller
         $user = User::where('api_token', $request->api_token)->first();
 
         $data = array(
+            'id' => $user->id,
             'firstName' => $user->firstName,
             'lastName' => $user->lastName,
             'email' => $user->email
