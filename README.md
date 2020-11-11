@@ -1,4 +1,13 @@
-#Game The System
+<div align="center">
+<h1>ITS Security</h1>
+</div>
+<div align="center">
+<h3>Developed by Game The System</h3>
+</div>
+
+<div align="center">
+<a href="https://hecoweb.azurewebsites.net/">Website</a> | <a href="https://devpost.com/software/electric-vehicle-charging-analysis-5dv7mo">DevPost</a>
+</div>
 
 ## BUILD UI
 
