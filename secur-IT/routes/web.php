@@ -4,6 +4,7 @@ use App\Http\Controllers\TestController;
 
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\Login;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +34,8 @@ Route::get('appointments/form/create', [AppointmentController::class, 'getFormCr
 Route::post('appointments/create', [AppointmentController::class, 'postCreateAppointments']);
 Route::post('checkin', [AppointmentController::class, 'postUpdateCheckIn']);
 Route::post('checkout', [AppointmentController::class, 'postUpdateCheckOut']);
+
+Route::post('login', [Login::class, 'login']);
+Route::post('logout', [Login::class, 'logout']);
+
+Route::post('user', [Login::class, 'user']);
