@@ -4,6 +4,7 @@ use App\Http\Controllers\TestController;
 
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\Login;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,10 @@ Route::get('appointments/today', [AppointmentController::class, 'getTodayAppoint
 Route::get('appointments/upcoming', [AppointmentController::class, 'getUpComingAppointments']);
 Route::get('appointments/form/create', [AppointmentController::class, 'getFormCreateAppointments']);
 Route::post('appointments/create', [AppointmentController::class, 'postCreateAppointments']);
+Route::post('checkin', [AppointmentController::class, 'postUpdateCheckIn']);
+Route::post('checkout', [AppointmentController::class, 'postUpdateCheckOut']);
 
-// POST /checkin/<APPT>/<ID>: [dbo].[Update_AppointmentCheckIn_Proc] (@AppointmentID, @GuestID)
-// POST /checkout/<APPT>/<ID>: [dbo].[Update_AppointmentCheckOut_Proc] (@AppointmentID, @GuestID)
+Route::post('login', [Login::class, 'login']);
+Route::post('logout', [Login::class, 'logout']);
+
+Route::post('user', [Login::class, 'user']);
