@@ -31,6 +31,7 @@ class Navbar extends React.Component {
       <nav className="flex items-center justify-between flex-wrap bg-color p-6">
         {/* LOGO */}
         <div className="flex items-center flex-no-shrink text-white mr-6">
+          <img src="logo_white.svg" alt="logo" style={{"max-width": "45px", "margin-right" : "10px"}}/>  
           <span class="font-semibold text-xl tracking-tight">
             <Link href="/">GameTheSystem</Link>
           </span>
